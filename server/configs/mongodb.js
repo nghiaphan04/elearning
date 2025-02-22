@@ -4,7 +4,7 @@ const connectDB = async () => {
     mongoose.connection.on("conected",()=>{
         console.log("Mongodb connected")
     })
-    await mongoose.connect(`${process.env.MONGO_URL}/lms`);
+    await mongoose.connect(`${process.env.MONGODB_URI}/lms`);
 
 };
 
