@@ -60,7 +60,7 @@ export const purchaseCourse = async (req, res) => {
                 },
                 unit_amount: Math.floor(newPurchase.amount) * 100
             },
-            quanlity: 1
+            quantity: 1
         }]
 
         const session = await stripeInstance.checkout.sessions.create({
