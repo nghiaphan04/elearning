@@ -4,8 +4,7 @@ import {
     getUserCourseProgress, getUserData,
     purchaseCourse, updateUserCourseProgress,
     userEnrolledCourses
-}
-    from '../controllers/userController.js'
+} from '../controllers/userController.js'
 
 const userRouter = express.Router()
 

@@ -1,6 +1,7 @@
 import { clerkClient } from '@clerk/express'
 import Course from '../models/Course.js'
 import { v2 as cloudinary } from 'cloudinary'
+import User from '../models/User.js'
 
 
 export const updatetoRoleToEducator = async (req, res) => {
@@ -35,7 +36,7 @@ export const addCourse = async (req, res) => {
         parsedCourseData.educator = educatorId
         const newCourse = await Course.create(parsedCourseData)
         const imageUpload = await cloudinary.uploader.upload(imageFile.path)
-        newCourse.corseThumbnail = imageUpload.secure_url
+        newCourse.courseThumbnail = imageUpload.secure_url
         await newCourse.save()
 
         res.json({ success: true, message: ' Course Added' })
